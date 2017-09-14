@@ -11,7 +11,7 @@ import org.apache.commons.lang.StringUtils;
  *
  * @author hcadavid
  */
-public class DefaultPasswordValidator {
+public class DefaultPasswordValidator implements Contraseña{
     
     /**
      * Valida los siguientes criterios de contrasena:
@@ -20,7 +20,8 @@ public class DefaultPasswordValidator {
      * @param pwd la contrasena asociada
      * @return True si cumple con los criterios indicados
      */
-    public boolean validatePassword(String password){
+    @Override
+    public boolean checkPassword(String  password){
         if (password.length()<=20){            
             return !StringUtils.containsAny(password, "!@#$%ˆ*()-+");
         }
@@ -28,5 +29,7 @@ public class DefaultPasswordValidator {
             return false;
         }
     }    
+
+   
 
 }

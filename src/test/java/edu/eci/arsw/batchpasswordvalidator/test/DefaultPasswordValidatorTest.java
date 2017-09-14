@@ -26,14 +26,14 @@ public class DefaultPasswordValidatorTest {
     @Test
     public void testBTOne(){
         DefaultPasswordValidator dpv=new DefaultPasswordValidator();
-        assertTrue("No se estan aceptando contrasenas validas de exactamente 20 caracteres.",dpv.validatePassword("12345678901234567890"));
+        assertTrue("No se estan aceptando contrasenas validas de exactamente 20 caracteres.",dpv.checkPassword("12345678901234567890"));
     }
 
 
     @Test
     public void test(){
         DefaultPasswordValidator dpv=new DefaultPasswordValidator();
-        assertFalse("Se estan aceptando contrasenas de exactamente 20 caracteres con simbolos invalidos.",dpv.validatePassword("1234!67890@234567890"));
+        assertFalse("Se estan aceptando contrasenas de exactamente 20 caracteres con simbolos invalidos.",dpv.checkPassword("1234!67890@234567890"));
     }
 
     
